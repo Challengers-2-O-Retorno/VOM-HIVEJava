@@ -8,3 +8,14 @@
 | Isabella Jorge Ferreira     | RM552329 | Data Base Administrator     |
 | Mateus Mantovani Araújo     | RM98524  | Java Developer Sênior       |
 | Juan de Godoy               | RM551408 | Full Stack Developer Sênior |
+
+# Diagramas do projeto
+
+<img src="https://github.com/Challengers-2-O-Retorno/VOM-HIVEJava/blob/main/diagrams/Logical.png">
+
+<img src="https://github.com/Challengers-2-O-Retorno/VOM-HIVEJava/blob/main/diagrams/Relational.png">
+
+# Como rodar a aplicação?
+
+
+
