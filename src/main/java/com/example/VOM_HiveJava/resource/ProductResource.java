@@ -1,12 +1,13 @@
 package com.example.VOM_HiveJava.resource;
 
+import com.example.VOM_HiveJava.dto.request.ProductRequest;
+import com.example.VOM_HiveJava.dto.response.ProductResponse;
 import com.example.VOM_HiveJava.entity.Product;
 import com.example.VOM_HiveJava.repository.ProductRepository;
+import jakarta.transaction.Transactional;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +27,12 @@ public class ProductResource {
     @GetMapping(value = "/{id}")
     public Product findById(@PathVariable Long id) {
         return repo.findById( id ).orElse( null );
+    }
+
+    @Transactional
+    @PostMapping
+    public Product save(@RequestBody Product p) {
+        return repo.save( p );
     }
 
 }

@@ -2,7 +2,9 @@ package com.example.VOM_HiveJava.resource;
 
 
 import com.example.VOM_HiveJava.entity.Campaign;
+import com.example.VOM_HiveJava.entity.Product;
 import com.example.VOM_HiveJava.repository.CampaignRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +26,12 @@ public class CampaignResource {
     @GetMapping(value = "/{id}")
     public Campaign findById(@PathVariable Long id) {
         return repo.findById( id ).orElse( null );
+    }
+
+    @Transactional
+    @PostMapping
+    public Campaign save(@RequestBody Campaign c) {
+        return repo.save( c );
     }
 
 }
