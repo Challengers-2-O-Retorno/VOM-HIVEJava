@@ -14,11 +14,9 @@ public record SubscriptionRequest(
         String status,
 
         @PastOrPresent(message = "A data de início não pode ser no futuro")
-        @NotNull(message = "Data de início da assinatura é obrigatório")
         LocalDate dt_start,
 
         @FutureOrPresent
-        @NotNull(message = "Data do fim da assinatura")
         LocalDate dt_end
 ) {
 }

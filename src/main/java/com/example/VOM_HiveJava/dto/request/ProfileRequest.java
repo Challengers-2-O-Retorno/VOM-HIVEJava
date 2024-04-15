@@ -10,16 +10,14 @@ public record ProfileRequest(
         @NotNull(message = "Nome do usuário é obrigatório")
         String nm_user,
 
-        @NotNull(message = "Campo obrigatório")
+        @NotNull(message = "Senha do usuário obrigatório")
         String pass_user,
 
-        @NotNull(message = "Permissão obrigatória")
         String permission,
 
         String status,
 
         @PastOrPresent(message = "A data de registro n pode ser no futuro")
-        @NotNull(message = "Data de registro obrigatória")
         LocalDate dt_register
 ) {
 }

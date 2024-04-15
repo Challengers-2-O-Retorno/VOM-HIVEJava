@@ -10,6 +10,7 @@ public record Pay_histRequest(
 
         double valor,
         byte[] nef,
+        @NotNull(message = "Campo obrigatório")
         String method,
 
         @FutureOrPresent

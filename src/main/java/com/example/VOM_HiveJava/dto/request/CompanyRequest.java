@@ -1,6 +1,7 @@
 package com.example.VOM_HiveJava.dto.request;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 
@@ -11,6 +12,7 @@ public record CompanyRequest(
         @NotNull(message = "O nome da companhia é obrigatório")
         String nm_company,
 
+        @Max(value = 14, message = "CNPJ deve ter 14 digitos(desconsidere pontos))")
         @NotNull(message = "O CNPJ da companhia é obrigatório")
         String cnpj,
 
@@ -19,7 +21,6 @@ public record CompanyRequest(
         String email,
 
         @PastOrPresent(message = "A data de registro não pode ser no futuro")
-        @NotNull(message = "A data de registro é obrigatória")
         LocalDate dt_register
 ) {
 }
