@@ -17,5 +17,10 @@
 
 # Como rodar a aplicação?
 
+- Para executar o arquivo do projeto, baixe o zip do arquivo e execute o comando a baixo no terminal dentro do IntelliJ.
+  
+```
+mvn spring-boot:run
+```
 
 
