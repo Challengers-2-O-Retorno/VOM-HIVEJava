@@ -17,7 +17,6 @@ public record ProfileRequest(
 
         String status,
 
-        @PastOrPresent(message = "A data de registro n pode ser no futuro")
         LocalDate dt_register
 ) {
 }

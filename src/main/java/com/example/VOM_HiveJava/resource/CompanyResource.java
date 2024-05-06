@@ -28,7 +28,6 @@ public class CompanyResource {
         return repo.findById( id ).orElse( null );
     }
 
-    @Transactional
     @PostMapping
     public Company save(@RequestBody Company c) {
         return repo.save( c );

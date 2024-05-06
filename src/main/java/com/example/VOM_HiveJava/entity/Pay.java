@@ -15,7 +15,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "TB_PAY_HIST")
-public class Pay_hist {
+public class Pay {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_PAY_HIST")

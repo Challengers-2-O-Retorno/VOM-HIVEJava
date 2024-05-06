@@ -21,7 +21,6 @@ public record CompanyRequest(
         @NotNull(message = "O email da companhia é obrigatório")
         String email,
 
-        @PastOrPresent(message = "A data de registro não pode ser no futuro")
         LocalDate dt_register
 ) {
 }

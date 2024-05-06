@@ -17,7 +17,6 @@ public record CampaignRequest(
 
         String status,
 
-        @PastOrPresent(message = "A data de registro não pode ser no futuro")
         LocalDate dt_register
 
 ) {

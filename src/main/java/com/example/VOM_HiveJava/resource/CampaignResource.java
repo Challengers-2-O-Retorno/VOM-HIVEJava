@@ -28,7 +28,6 @@ public class CampaignResource {
         return repo.findById( id ).orElse( null );
     }
 
-    @Transactional
     @PostMapping
     public Campaign save(@RequestBody Campaign c) {
         return repo.save( c );

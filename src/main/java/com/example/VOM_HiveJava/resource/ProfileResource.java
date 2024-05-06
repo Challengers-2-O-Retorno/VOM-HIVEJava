@@ -29,7 +29,6 @@ public class ProfileResource {
         return repo.findById( id ).orElse( null );
     }
 
-    @Transactional
     @PostMapping
     public Profile save(@RequestBody Profile p) {
         return repo.save( p );

@@ -28,7 +28,6 @@ public class SubscriptionResource {
         return repo.findById( id ).orElse( null );
     }
 
-    @Transactional
     @PostMapping
     public Subscription save(@RequestBody Subscription s) {
         return repo.save( s );

@@ -2,7 +2,7 @@ package com.example.VOM_HiveJava.dto.response;
 
 import java.time.LocalDate;
 
-public record Pay_histResponse(
+public record PayResponse(
 
         int id_history,
         double value,

@@ -60,7 +60,7 @@ public class Subscription {
                     )
             }
     )
-    private Set<Pay_hist> pagamentos = new LinkedHashSet<>();
+    private Set<Pay> pagamentos = new LinkedHashSet<>();
 
     //Relacionamento ManyToOne
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})

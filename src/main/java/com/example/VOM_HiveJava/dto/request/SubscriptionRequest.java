@@ -13,7 +13,6 @@ public record SubscriptionRequest(
 
         String status,
 
-        @PastOrPresent(message = "A data de início não pode ser no futuro")
         LocalDate dt_start,
 
         @FutureOrPresent

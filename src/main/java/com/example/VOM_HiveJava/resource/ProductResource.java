@@ -29,7 +29,6 @@ public class ProductResource {
         return repo.findById( id ).orElse( null );
     }
 
-    @Transactional
     @PostMapping
     public Product save(@RequestBody Product p) {
         return repo.save( p );
