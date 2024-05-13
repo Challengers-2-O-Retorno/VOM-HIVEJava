@@ -14,7 +14,10 @@ import java.time.LocalDate;
 @Builder
 
 @Entity
-@Table(name = "TB_CAMPAIGN")
+@Table(name = "TB_CAMPAIGN",
+                uniqueConstraints = {
+        @UniqueConstraint(name = "UK_CAMPAIGN_NOME", columnNames = "NM_CAMPAIGN")
+                })
 public class Campaign {
 
     @Id

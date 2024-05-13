@@ -23,18 +23,23 @@ public class Profile {
     @Column(name = "ID_USER_PROFILE")
     private int id_user;
 
+    //Nome
     @Column(name = "NM_USER_PROFILE")
     private String nm_user;
 
+    //Password
     @Column(name = "PASS_USER_PROFILE")
     private String pass_user;
 
+    //Permissão
     @Column(name = "PERMISSION_PROFILE")
     private String permission;
 
+    //Status
     @Column(name = "STATUS_PROFILE")
     private String status;
 
+    //Data de registro
     @Column(name = "DT_REGISTER_PROFILE")
     private LocalDate dt_register;
 

@@ -16,7 +16,10 @@ import java.util.Set;
 @Builder
 
 @Entity
-@Table(name = "TB_COMPANY")
+@Table(name = "TB_COMPANY",
+                uniqueConstraints = {
+        @UniqueConstraint(name = "UK_COMPANY_NOME", columnNames = "NM_COMPANY")
+                })
 public class Company {
 
     @Id

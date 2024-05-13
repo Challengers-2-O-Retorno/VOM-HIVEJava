@@ -9,7 +9,7 @@ public record SubscriptionResponse(
         String status,
         LocalDate dt_start,
         LocalDate dt_end,
-        PayResponse Pay_hist,
-        CompanyResponse Company
+        PayResponse pagamentos,
+        CompanyResponse company
 ) {
 }
