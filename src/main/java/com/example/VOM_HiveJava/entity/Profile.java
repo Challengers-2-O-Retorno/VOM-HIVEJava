@@ -21,7 +21,7 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_PROFILE")
     @SequenceGenerator(name = "SQ_PROFILE", sequenceName = "SQ_PROFILE", allocationSize = 1)
     @Column(name = "ID_USER_PROFILE")
-    private int id_user;
+    private Long id_user;
 
     //Nome
     @Column(name = "NM_USER_PROFILE")

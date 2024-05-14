@@ -24,7 +24,7 @@ public class Campaign {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_CAMPAIGN")
     @SequenceGenerator(name = "SQ_CAMPAIGN", sequenceName = "SQ_CAMPAIGN", allocationSize = 1)
     @Column(name = "ID_CAMPAIGN")
-    private int id_campaign;
+    private Long id_campaign;
 
     @Column(name = "NM_CAMPAIGN")
     private String nm_campaign;

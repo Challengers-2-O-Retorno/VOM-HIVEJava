@@ -1,8 +1,11 @@
 package com.example.VOM_HiveJava.dto.response;
 
+import lombok.Builder;
+
+@Builder
 public record ProductResponse(
 
-        int id_product,
+        Long id_product,
         String nm_product,
         String category
 ) {

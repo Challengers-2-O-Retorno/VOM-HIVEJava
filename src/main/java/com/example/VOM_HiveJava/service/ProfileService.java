@@ -1,6 +1,7 @@
 package com.example.VOM_HiveJava.service;
 
 import com.example.VOM_HiveJava.dto.request.ProfileRequest;
+import com.example.VOM_HiveJava.dto.response.ProfileResponse;
 import com.example.VOM_HiveJava.entity.Profile;
 import com.example.VOM_HiveJava.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.data.domain.Example;
 
 import java.util.Collection;
 
-public class ProfileService implements ServiceDTO<Profile, ProfileRequest, Profile> {
+public class ProfileService implements ServiceDTO<Profile, ProfileRequest, ProfileResponse> {
 
     @Autowired
     private ProfileRepository repo;
@@ -25,8 +26,8 @@ public class ProfileService implements ServiceDTO<Profile, ProfileRequest, Profi
     }
 
     @Override
-    public Profile toResponse(Profile e) {
-        return Profile.builder()
+    public ProfileResponse toResponse(Profile e) {
+        return ProfileResponse.builder()
                 .id_user(e.getId_user())
                 .nm_user(e.getNm_user())
                 .pass_user(e.getPass_user())

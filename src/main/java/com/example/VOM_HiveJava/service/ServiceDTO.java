@@ -1,5 +1,6 @@
 package com.example.VOM_HiveJava.service;
 
+import com.example.VOM_HiveJava.entity.Profile;
 import org.springframework.data.domain.Example;
 
 import java.util.Collection;

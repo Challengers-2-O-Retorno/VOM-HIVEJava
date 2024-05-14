@@ -23,7 +23,7 @@ public class Subscription {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_SUBSCRIPTION")
     @SequenceGenerator(name = "SQ_SUBSCRIPTION", sequenceName = "SQ_SUBSCRIPTION", allocationSize = 1)
     @Column(name = "ID_SUBSCRIPTION")
-    private int id_subscription;
+    private Long id_subscription;
 
     @Column(name = "VALUE_SUBSCRIPTION")
     private double value;

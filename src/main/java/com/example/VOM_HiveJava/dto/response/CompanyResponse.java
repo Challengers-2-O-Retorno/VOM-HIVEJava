@@ -1,14 +1,19 @@
 package com.example.VOM_HiveJava.dto.response;
 
-import java.time.LocalDate;
+import lombok.Builder;
 
+import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Set;
+
+@Builder
 public record CompanyResponse(
 
-        int id_company,
+        Long id_company,
         String nm_company,
         String cnpj,
         String email,
         LocalDate dt_register,
-        ProfileResponse profile
+        Collection<ProfileResponse> profiles
 ) {
 }

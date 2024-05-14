@@ -1,5 +1,6 @@
 package com.example.VOM_HiveJava.dto.request;
 
+import com.example.VOM_HiveJava.dto.response.ProfileResponse;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
@@ -21,6 +22,10 @@ public record CompanyRequest(
         @NotNull(message = "O email da companhia é obrigatório")
         String email,
 
-        LocalDate dt_register
+        LocalDate dt_register,
+
+        ProfileResponse profiles
+
+
 ) {
 }

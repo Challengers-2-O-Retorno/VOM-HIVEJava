@@ -1,15 +1,19 @@
 package com.example.VOM_HiveJava.dto.response;
 
-import java.time.LocalDate;
+import lombok.Builder;
 
+import java.time.LocalDate;
+import java.util.Collection;
+
+@Builder
 public record SubscriptionResponse(
 
-        int id_subscription,
+        Long id_subscription,
         double value,
         String status,
         LocalDate dt_start,
         LocalDate dt_end,
-        PayResponse pagamentos,
+        Collection<PayResponse> pagamentos,
         CompanyResponse company
 ) {
 }

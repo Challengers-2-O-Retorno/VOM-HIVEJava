@@ -1,6 +1,7 @@
 package com.example.VOM_HiveJava.service;
 
 import com.example.VOM_HiveJava.dto.request.PayRequest;
+import com.example.VOM_HiveJava.dto.response.PayResponse;
 import com.example.VOM_HiveJava.entity.Pay;
 import com.example.VOM_HiveJava.repository.PayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.data.domain.Example;
 
 import java.util.Collection;
 
-public class PayService implements ServiceDTO<Pay, PayRequest, Pay> {
+public class PayService implements ServiceDTO<Pay, PayRequest, PayResponse> {
 
     @Autowired
     private PayRepository repo;
@@ -24,8 +25,8 @@ public class PayService implements ServiceDTO<Pay, PayRequest, Pay> {
     }
 
     @Override
-    public Pay toResponse(Pay e) {
-        return Pay.builder()
+    public PayResponse toResponse(Pay e) {
+        return PayResponse.builder()
                 .id_history(e.getId_history())
                 .value(e.getValue())
                 .nef(e.getNef())

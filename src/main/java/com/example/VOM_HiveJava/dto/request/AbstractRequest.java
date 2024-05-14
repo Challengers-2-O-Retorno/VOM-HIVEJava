@@ -4,6 +4,6 @@ import jakarta.validation.constraints.NotNull;
 
 public record AbstractRequest(
         @NotNull(message = "O id é campo obrigatório")
-        int id
+        Long id
 ) {
 }

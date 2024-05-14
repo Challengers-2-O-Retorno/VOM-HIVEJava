@@ -1,6 +1,7 @@
 package com.example.VOM_HiveJava.service;
 
 import com.example.VOM_HiveJava.dto.request.ProductRequest;
+import com.example.VOM_HiveJava.dto.response.ProductResponse;
 import com.example.VOM_HiveJava.entity.Product;
 import com.example.VOM_HiveJava.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,7 @@ import org.springframework.data.domain.Example;
 
 import java.util.Collection;
 
-public class ProductService implements ServiceDTO<Product, ProductRequest, Product> {
+public class ProductService implements ServiceDTO<Product, ProductRequest, ProductResponse> {
 
     @Autowired
     private ProductRepository repo;
@@ -22,8 +23,8 @@ public class ProductService implements ServiceDTO<Product, ProductRequest, Produ
     }
 
     @Override
-    public Product toResponse(Product e) {
-        return Product.builder()
+    public ProductResponse toResponse(Product e) {
+        return ProductResponse.builder()
                 .id_product(e.getId_product())
                 .nm_product(e.getNm_product())
                 .category(e.getCategory())

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,22 +24,23 @@ public class CompanyService implements ServiceDTO<Company, CompanyRequest, Compa
 
     @Override
     public Company toEntity(CompanyRequest r) {
+
         return Company.builder()
                 .nm_company(r.nm_company())
                 .cnpj(r.cnpj())
                 .email(r.email())
                 .dt_register(r.dt_register())
-                .profiles()
                 .build();
     }
 
     @Override
     public CompanyResponse toResponse(Company e) {
-        Set<ProfileResponse> profiles = null;
-        if (Objects.nonNull(e.getProfiles()) && !e.getProfiles().isEmpty())
-            profiles = e.getProfiles().stream().map(profileService::ToResponse).toList();
 
-        return Company.builder()
+        List<ProfileResponse> profiles = null;
+        if (Objects.nonNull(e.getProfiles()) && !e.getProfiles().isEmpty())
+            profiles = e.getProfiles().stream().map(profileService::toResponse).toList();
+
+        return CompanyResponse.builder()
                 .id_company(e.getId_company())
                 .nm_company(e.getNm_company())
                 .cnpj(e.getCnpj())

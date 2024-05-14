@@ -1,5 +1,7 @@
 package com.example.VOM_HiveJava.dto.request;
 
+import com.example.VOM_HiveJava.dto.response.CompanyResponse;
+import com.example.VOM_HiveJava.dto.response.PayResponse;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -16,6 +18,10 @@ public record SubscriptionRequest(
         LocalDate dt_start,
 
         @FutureOrPresent
-        LocalDate dt_end
+        LocalDate dt_end,
+
+        PayResponse pagamentos,
+
+        CompanyResponse company
 ) {
 }

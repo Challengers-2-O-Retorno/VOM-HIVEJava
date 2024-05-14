@@ -26,7 +26,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_COMPANY")
     @SequenceGenerator(name = "SQ_COMPANY", sequenceName = "SQ_COMPANY", allocationSize = 1)
     @Column(name = "ID_COMPANY")
-    private int id_company;
+    private Long id_company;
 
     @Column(name = "NM_COMPANY")
     private String nm_company;

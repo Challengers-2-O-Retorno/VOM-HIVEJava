@@ -1,10 +1,13 @@
 package com.example.VOM_HiveJava.dto.response;
 
+import lombok.Builder;
+
 import java.time.LocalDate;
 
+@Builder
 public record ProfileResponse(
 
-        int id_user,
+        Long id_user,
         String nm_user,
         String pass_user,
         String permission,
