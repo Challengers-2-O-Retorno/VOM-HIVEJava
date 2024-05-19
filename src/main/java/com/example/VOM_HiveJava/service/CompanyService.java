@@ -4,6 +4,7 @@ import com.example.VOM_HiveJava.dto.request.CompanyRequest;
 import com.example.VOM_HiveJava.dto.response.CompanyResponse;
 import com.example.VOM_HiveJava.dto.response.ProfileResponse;
 import com.example.VOM_HiveJava.entity.Company;
+import com.example.VOM_HiveJava.entity.Profile;
 import com.example.VOM_HiveJava.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -25,11 +26,14 @@ public class CompanyService implements ServiceDTO<Company, CompanyRequest, Compa
     @Override
     public Company toEntity(CompanyRequest r) {
 
+        var profiles = profileService.findById(r.profiles().id_user());
+
         return Company.builder()
                 .nm_company(r.nm_company())
                 .cnpj(r.cnpj())
                 .email(r.email())
                 .dt_register(r.dt_register())
+                .profiles((Set<Profile>) profiles)
                 .build();
     }
 

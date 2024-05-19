@@ -44,6 +44,7 @@ public class CampaignService implements ServiceDTO<Campaign, CampaignRequest, Ca
         var company = companyService.toResponse(e.getCompany());
 
         var product = productService.toResponse(e.getProduct());
+
         return CampaignResponse.builder()
                 .id_campaign(e.getId_campaign())
                 .nm_campaign(e.getNm_campaign())
