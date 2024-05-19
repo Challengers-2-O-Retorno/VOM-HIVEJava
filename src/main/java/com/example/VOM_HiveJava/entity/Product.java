@@ -28,5 +28,5 @@ public class Product {
     private String nm_product;
 
     @Column(name = "CATEGORY_PRODUCT")
-    private String category;
+    private Category category;
 }
