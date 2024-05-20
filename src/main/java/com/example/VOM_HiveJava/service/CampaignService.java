@@ -25,16 +25,16 @@ public class CampaignService implements ServiceDTO<Campaign, CampaignRequest, Ca
     @Override
     public Campaign toEntity(CampaignRequest r) {
 
-        var company = companyService.findById(r.company().id_company());
+        var company = companyService.findById(r.company().idCompany());
 
-        var product = productService.findById(r.product().id_product());
+        var product = productService.findById(r.product().idProduct());
 
         return Campaign.builder()
-                .nm_campaign(r.nm_campaign())
+                .nmCampaign(r.nmCampaign())
                 .target(r.target())
                 .details(r.details())
                 .status(r.status())
-                .dt_register(r.dt_register())
+                .dtRegister(r.dtRegister())
                 .company(company)
                 .product(product)
                 .build();
@@ -48,12 +48,12 @@ public class CampaignService implements ServiceDTO<Campaign, CampaignRequest, Ca
         var product = productService.toResponse(e.getProduct());
 
         return CampaignResponse.builder()
-                .id_campaign(e.getId_campaign())
-                .nm_campaign(e.getNm_campaign())
+                .idCampaign(e.getIdCampaign())
+                .nmCampaign(e.getNmCampaign())
                 .target(e.getTarget())
                 .details(e.getDetails())
                 .status(e.getStatus())
-                .dt_register(e.getDt_register())
+                .dtRegister(e.getDtRegister())
                 .company(company)
                 .product(product)
                 .build();

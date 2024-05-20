@@ -16,7 +16,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 
@@ -30,18 +29,18 @@ public class CampaignResource implements ResourceDTO<CampaignRequest, CampaignRe
     @GetMapping
     public ResponseEntity<Collection<CampaignResponse>> findAll(
 
-            @RequestParam(name = "nm_campaign", required = false) String nm_campaign,
+            @RequestParam(name = "nmCampaign", required = false) String nmCampaign,
             @RequestParam(name = "target", required = false) String target,
             @RequestParam(name = "details", required = false) byte[] details,
             @RequestParam(name = "status", required = false) String status,
-            @RequestParam(name = "dt_register", required = false) LocalDate dt_register
+            @RequestParam(name = "dtRegister", required = false) LocalDate dtRegister
     ) {
         var campaign = Campaign.builder()
-                .nm_campaign(nm_campaign)
+                .nmCampaign(nmCampaign)
                 .target(target)
                 .details(details)
                 .status(status)
-                .dt_register(dt_register)
+                .dtRegister(dtRegister)
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
@@ -79,7 +78,7 @@ public class CampaignResource implements ResourceDTO<CampaignRequest, CampaignRe
 
         var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}")
-                .buildAndExpand(entity.getId_campaign())
+                .buildAndExpand(entity.getIdCampaign())
                 .toUri();
 
         return ResponseEntity.created(uri).body(response);

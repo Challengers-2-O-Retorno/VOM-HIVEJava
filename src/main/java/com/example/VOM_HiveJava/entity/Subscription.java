@@ -23,7 +23,7 @@ public class Subscription {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_SUBSCRIPTION")
     @SequenceGenerator(name = "SQ_SUBSCRIPTION", sequenceName = "SQ_SUBSCRIPTION", allocationSize = 1)
     @Column(name = "ID_SUBSCRIPTION")
-    private Long id_subscription;
+    private Long idSubscription;
 
     @Column(name = "VALUE_SUBSCRIPTION")
     private double value;
@@ -32,10 +32,10 @@ public class Subscription {
     private String status;
 
     @Column(name = "DT_START_SUBSCRIPTION")
-    private LocalDate dt_start;
+    private LocalDate dtStart;
 
     @Column(name = "DT_END_SUBSCRIPTION")
-    private LocalDate dt_end;
+    private LocalDate dtEnd;
 
     //Relacionamento ManyToMany
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})

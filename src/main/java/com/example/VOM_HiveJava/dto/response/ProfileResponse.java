@@ -7,11 +7,11 @@ import java.time.LocalDate;
 @Builder
 public record ProfileResponse(
 
-        Long id_user,
-        String nm_user,
-        String pass_user,
+        Long idUser,
+        String nmUser,
+        String passUser,
         String permission,
         String status,
-        LocalDate dt_register
+        LocalDate dtRegister
 ) {
 }

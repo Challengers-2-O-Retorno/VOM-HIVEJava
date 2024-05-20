@@ -6,8 +6,8 @@ import lombok.Builder;
 @Builder
 public record ProductResponse(
 
-        Long id_product,
-        String nm_product,
+        Long idProduct,
+        String nmProduct,
         Category category
 ) {
 }

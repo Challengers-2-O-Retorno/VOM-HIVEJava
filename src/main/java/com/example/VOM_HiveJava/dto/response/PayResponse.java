@@ -7,11 +7,11 @@ import java.time.LocalDate;
 @Builder
 public record PayResponse(
 
-        Long id_history,
+        Long idHistory,
         double value,
         byte[] nef,
         String method,
-        LocalDate dt_payment,
-        LocalDate dt_due
+        LocalDate dtPayment,
+        LocalDate dtDue
 ) {
 }

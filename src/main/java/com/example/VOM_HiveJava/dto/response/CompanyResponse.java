@@ -9,11 +9,11 @@ import java.util.Set;
 @Builder
 public record CompanyResponse(
 
-        Long id_company,
-        String nm_company,
+        Long idCompany,
+        String nmCompany,
         String cnpj,
         String email,
-        LocalDate dt_register,
+        LocalDate dtRegister,
         Collection<ProfileResponse> profiles
 ) {
 }

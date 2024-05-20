@@ -1,13 +1,8 @@
 package com.example.VOM_HiveJava.resource;
 
-import com.example.VOM_HiveJava.dto.request.CampaignRequest;
 import com.example.VOM_HiveJava.dto.request.SubscriptionRequest;
-import com.example.VOM_HiveJava.dto.response.CampaignResponse;
 import com.example.VOM_HiveJava.dto.response.SubscriptionResponse;
-import com.example.VOM_HiveJava.entity.Campaign;
-import com.example.VOM_HiveJava.entity.Product;
 import com.example.VOM_HiveJava.entity.Subscription;
-import com.example.VOM_HiveJava.repository.ProductRepository;
 import com.example.VOM_HiveJava.repository.SubscriptionRepository;
 import com.example.VOM_HiveJava.service.SubscriptionService;
 import jakarta.transaction.Transactional;
@@ -21,7 +16,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 @RestController
@@ -37,25 +31,23 @@ public class SubscriptionResource implements ResourceDTO<SubscriptionRequest, Su
     @GetMapping
     public ResponseEntity<Collection<SubscriptionResponse>> findAll(
 
-            @RequestParam(name = "id_subscription", required = false) Long id_subscription,
             @RequestParam(name = "value", required = false) double value,
             @RequestParam(name = "status", required = false) String status,
-            @RequestParam(name = "dt_start", required = false) LocalDate dt_start,
-            @RequestParam(name = "dt_end", required = false) LocalDate dt_end
+            @RequestParam(name = "dtStart", required = false) LocalDate dtStart,
+            @RequestParam(name = "dtEnd", required = false) LocalDate dtEnd
     ) {
 
         var subscription = Subscription.builder()
-                .id_subscription(id_subscription)
                 .value(value)
                 .status(status)
-                .dt_start(dt_start)
-                .dt_end(dt_end)
+                .dtStart(dtStart)
+                .dtEnd(dtEnd)
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
                 .matchingAll()
                 .withIgnoreCase()
-                .withMatcher("id_subscription", match -> match.contains())
+                .withMatcher("idSubscription", match -> match.contains())
                 .withIgnoreNullValues();
 
         Example<Subscription> example = Example.of(subscription, matcher);
@@ -86,7 +78,7 @@ public class SubscriptionResource implements ResourceDTO<SubscriptionRequest, Su
 
         var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}")
-                .buildAndExpand(entity.getId_subscription())
+                .buildAndExpand(entity.getIdSubscription())
                 .toUri();
 
         return ResponseEntity.created(uri).body(response);

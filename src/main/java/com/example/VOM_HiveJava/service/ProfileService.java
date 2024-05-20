@@ -19,23 +19,23 @@ public class ProfileService implements ServiceDTO<Profile, ProfileRequest, Profi
     @Override
     public Profile toEntity(ProfileRequest r) {
         return Profile.builder()
-                .nm_user(r.nm_user())
-                .pass_user(r.pass_user())
+                .nmUser(r.nmUser())
+                .passUser(r.passUser())
                 .permission(r.permission())
                 .status(r.status())
-                .dt_register(r.dt_register())
+                .dtRegister(r.dtRegister())
                 .build();
     }
 
     @Override
     public ProfileResponse toResponse(Profile e) {
         return ProfileResponse.builder()
-                .id_user(e.getId_user())
-                .nm_user(e.getNm_user())
-                .pass_user(e.getPass_user())
+                .idUser(e.getIdUser())
+                .nmUser(e.getNmUser())
+                .passUser(e.getPassUser())
                 .permission(e.getPermission())
                 .status(e.getStatus())
-                .dt_register(e.getDt_register())
+                .dtRegister(e.getDtRegister())
                 .build();
     }
 

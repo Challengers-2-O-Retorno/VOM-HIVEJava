@@ -8,11 +8,11 @@ import java.util.Collection;
 @Builder
 public record SubscriptionResponse(
 
-        Long id_subscription,
+        Long idSubscription,
         double value,
         String status,
-        LocalDate dt_start,
-        LocalDate dt_end,
+        LocalDate dtStart,
+        LocalDate dtEnd,
         Collection<PayResponse> pagamentos,
         CompanyResponse company
 ) {

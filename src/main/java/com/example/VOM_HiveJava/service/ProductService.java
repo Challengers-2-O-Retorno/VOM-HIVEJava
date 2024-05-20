@@ -19,7 +19,7 @@ public class ProductService implements ServiceDTO<Product, ProductRequest, Produ
     @Override
     public Product toEntity(ProductRequest r) {
         return Product.builder()
-                .nm_product(r.nm_product())
+                .nmProduct(r.nmProduct())
                 .category(r.category())
                 .build();
     }
@@ -27,8 +27,8 @@ public class ProductService implements ServiceDTO<Product, ProductRequest, Produ
     @Override
     public ProductResponse toResponse(Product e) {
         return ProductResponse.builder()
-                .id_product(e.getId_product())
-                .nm_product(e.getNm_product())
+                .idProduct(e.getIdProduct())
+                .nmProduct(e.getNmProduct())
                 .category(e.getCategory())
                 .build();
     }

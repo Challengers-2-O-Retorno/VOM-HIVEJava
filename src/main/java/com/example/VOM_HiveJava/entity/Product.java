@@ -22,10 +22,10 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_PRODUCT")
     @SequenceGenerator(name = "SQ_PRODUCT", sequenceName = "SQ_PRODUCT", allocationSize = 1)
     @Column(name = "ID_PRODUCT")
-    private Long id_product;
+    private Long idProduct;
 
     @Column(name = "NM_PRODUCT")
-    private String nm_product;
+    private String nmProduct;
 
     @Column(name = "CATEGORY_PRODUCT")
     private Category category;

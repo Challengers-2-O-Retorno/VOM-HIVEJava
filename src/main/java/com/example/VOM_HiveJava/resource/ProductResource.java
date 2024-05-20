@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 @RestController
@@ -26,18 +25,19 @@ public class ProductResource implements ResourceDTO<ProductRequest, ProductRespo
 
     @GetMapping
     public ResponseEntity<Collection<ProductResponse>> findAll(
-            @RequestParam(name = "nm_product") String nm_product,
+            @RequestParam(name = "nmProduct") String nmProduct,
             @RequestParam(name = "category") Category category
     ) {
+
         var product = Product.builder()
-                .nm_product( nm_product )
+                .nmProduct( nmProduct )
                 .category( category )
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
                 .matchingAll()
                 .withIgnoreCase()
-                .withMatcher( "nm_product", match -> match.contains())
+                .withMatcher( "nmProduct", match -> match.contains())
                 .withIgnoreNullValues();
 
         Example<Product> example = Example.of( product, matcher );
@@ -68,7 +68,7 @@ public class ProductResource implements ResourceDTO<ProductRequest, ProductRespo
 
         var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path( "/{id}" )
-                .buildAndExpand( entity.getId_product() )
+                .buildAndExpand( entity.getIdProduct() )
                 .toUri();
 
         return ResponseEntity.created( uri ).body( response );

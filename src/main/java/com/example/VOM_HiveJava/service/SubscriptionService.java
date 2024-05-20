@@ -29,15 +29,15 @@ public class SubscriptionService implements ServiceDTO<Subscription, Subscriptio
     @Override
     public Subscription toEntity(SubscriptionRequest r) {
 
-        var pagamentos = pagamentosService.findById(r.pagamentos().id_history());
+        var pagamentos = pagamentosService.findById(r.pagamentos().idHistory());
 
-        var company = companyService.findById(r.company().id_company());
+        var company = companyService.findById(r.company().idCompany());
 
         return Subscription.builder()
                 .value(r.value())
                 .status(r.status())
-                .dt_start(r.dt_start())
-                .dt_end(r.dt_end())
+                .dtStart(r.dtStart())
+                .dtEnd(r.dtEnd())
                 .pagamentos((Set<Pay>) pagamentos)
                 .company(company)
                 .build();
@@ -52,11 +52,12 @@ public class SubscriptionService implements ServiceDTO<Subscription, Subscriptio
         if (Objects.nonNull(e.getPagamentos()) && !e.getPagamentos().isEmpty())
             pagamentos = e.getPagamentos().stream().map(pagamentosService::toResponse).toList();
         return SubscriptionResponse.builder()
-                .id_subscription(e.getId_subscription())
+                .idSubscription(e.getIdSubscription())
                 .value(e.getValue())
                 .status(e.getStatus())
-                .dt_start(e.getDt_start())
-                .dt_end(e.getDt_end()).pagamentos(pagamentos)
+                .dtStart(e.getDtStart())
+                .dtEnd(e.getDtEnd())
+                .pagamentos(pagamentos)
                 .company(company)
                 .build();
     }

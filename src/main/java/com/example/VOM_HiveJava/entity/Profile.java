@@ -24,15 +24,15 @@ public class Profile {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_PROFILE")
     @SequenceGenerator(name = "SQ_PROFILE", sequenceName = "SQ_PROFILE", allocationSize = 1)
     @Column(name = "ID_USER_PROFILE")
-    private Long id_user;
+    private Long idUser;
 
     //Nome
     @Column(name = "NM_USER_PROFILE")
-    private String nm_user;
+    private String nmUser;
 
     //Password
     @Column(name = "PASS_USER_PROFILE")
-    private String pass_user;
+    private String passUser;
 
     //Permissão
     @Column(name = "PERMISSION_PROFILE")
@@ -44,6 +44,6 @@ public class Profile {
 
     //Data de registro
     @Column(name = "DT_REGISTER_PROFILE")
-    private LocalDate dt_register;
+    private LocalDate dtRegister;
 
 }

@@ -1,18 +1,16 @@
 package com.example.VOM_HiveJava.dto.request;
 
 import com.example.VOM_HiveJava.dto.response.ProfileResponse;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.*;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import java.time.LocalDate;
 
 public record CompanyRequest(
 
+        @Size(min = 10, max = 255)
         @NotNull(message = "O nome da companhia é obrigatório")
-        String nm_company,
+        String nmCompany,
 
         @CNPJ
         @NotNull(message = "O CNPJ da companhia é obrigatório")
@@ -22,7 +20,7 @@ public record CompanyRequest(
         @NotNull(message = "O email da companhia é obrigatório")
         String email,
 
-        LocalDate dt_register,
+        LocalDate dtRegister,
 
         ProfileResponse profiles
 

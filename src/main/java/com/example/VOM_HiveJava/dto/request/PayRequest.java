@@ -12,13 +12,11 @@ public record PayRequest(
         @NotNull(message = "Campo obrigatório")
         String method,
 
-        @FutureOrPresent
         @NotNull(message = "Campo obrigatório")
-        LocalDate dt_payment,
+        LocalDate dtPayment,
 
-        @FutureOrPresent
         @NotNull(message = "Campo obrigatório")
-        LocalDate dt_due
+        LocalDate dtDue
 
 ) {
 }

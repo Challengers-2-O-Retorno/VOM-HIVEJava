@@ -4,6 +4,7 @@ import com.example.VOM_HiveJava.entity.Profile;
 import org.springframework.data.domain.Example;
 
 import java.util.Collection;
+import java.util.List;
 
 public interface ServiceDTO<Entity, Request, Response> {
 

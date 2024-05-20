@@ -15,10 +15,10 @@ public record SubscriptionRequest(
 
         String status,
 
-        LocalDate dt_start,
+        LocalDate dtStart,
 
-        @FutureOrPresent
-        LocalDate dt_end,
+
+        LocalDate dtEnd,
 
         PayResponse pagamentos,
 

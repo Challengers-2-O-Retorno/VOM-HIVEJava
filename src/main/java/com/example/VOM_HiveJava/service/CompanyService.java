@@ -11,7 +11,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -28,13 +27,13 @@ public class CompanyService implements ServiceDTO<Company, CompanyRequest, Compa
     @Override
     public Company toEntity(CompanyRequest r) {
 
-        var profiles = profileService.findById(r.profiles().id_user());
+        var profiles = profileService.findById( r.profiles().idUser());
 
         return Company.builder()
-                .nm_company(r.nm_company())
+                .nmCompany(r.nmCompany())
                 .cnpj(r.cnpj())
                 .email(r.email())
-                .dt_register(r.dt_register())
+                .dtRegister(r.dtRegister())
                 .profiles((Set<Profile>) profiles)
                 .build();
     }
@@ -42,16 +41,16 @@ public class CompanyService implements ServiceDTO<Company, CompanyRequest, Compa
     @Override
     public CompanyResponse toResponse(Company e) {
 
-        List<ProfileResponse> profiles = null;
+        Collection<ProfileResponse> profiles = null;
         if (Objects.nonNull(e.getProfiles()) && !e.getProfiles().isEmpty())
             profiles = e.getProfiles().stream().map(profileService::toResponse).toList();
 
         return CompanyResponse.builder()
-                .id_company(e.getId_company())
-                .nm_company(e.getNm_company())
+                .idCompany(e.getIdCompany())
+                .nmCompany(e.getNmCompany())
                 .cnpj(e.getCnpj())
                 .email(e.getEmail())
-                .dt_register(e.getDt_register())
+                .dtRegister(e.getDtRegister())
                 .profiles(profiles)
                 .build();
     }

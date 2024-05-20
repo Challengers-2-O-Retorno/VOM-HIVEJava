@@ -26,10 +26,10 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_COMPANY")
     @SequenceGenerator(name = "SQ_COMPANY", sequenceName = "SQ_COMPANY", allocationSize = 1)
     @Column(name = "ID_COMPANY")
-    private Long id_company;
+    private Long idCompany;
 
     @Column(name = "NM_COMPANY")
-    private String nm_company;
+    private String nmCompany;
 
     @Column(name = "CNPJ_COMPANY")
     private String cnpj;
@@ -38,7 +38,7 @@ public class Company {
     private String email;
 
     @Column(name = "DT_REGISTER_COMPANY")
-    private LocalDate dt_register;
+    private LocalDate dtRegister;
 
     //relacionamento ManyToMany
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})

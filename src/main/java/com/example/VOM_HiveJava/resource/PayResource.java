@@ -1,12 +1,8 @@
 package com.example.VOM_HiveJava.resource;
 
-import com.example.VOM_HiveJava.dto.request.CampaignRequest;
 import com.example.VOM_HiveJava.dto.request.PayRequest;
-import com.example.VOM_HiveJava.dto.response.CampaignResponse;
 import com.example.VOM_HiveJava.dto.response.PayResponse;
-import com.example.VOM_HiveJava.entity.Campaign;
 import com.example.VOM_HiveJava.entity.Pay;
-import com.example.VOM_HiveJava.repository.PayRepository;
 import com.example.VOM_HiveJava.service.PayService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -19,11 +15,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 @RestController
-@RequestMapping(value = "/pay_hist")
+@RequestMapping(value = "/pay")
 public class PayResource implements ResourceDTO<PayRequest, PayResponse>{
 
     @Autowired
@@ -36,8 +31,8 @@ public class PayResource implements ResourceDTO<PayRequest, PayResponse>{
             @RequestParam(name = "value", required = false) double value,
             @RequestParam(name = "nef", required = false) byte[] nef,
             @RequestParam(name = "method", required = false) String method,
-            @RequestParam(name = "dt_payment", required = false)LocalDate dt_payment,
-            @RequestParam(name = "dt_due", required = false) LocalDate dt_due
+            @RequestParam(name = "dtPayment", required = false)LocalDate dtPayment,
+            @RequestParam(name = "dtDue", required = false) LocalDate dtDue
 
             ) {
 
@@ -45,8 +40,8 @@ public class PayResource implements ResourceDTO<PayRequest, PayResponse>{
                 .value(value)
                 .nef(nef)
                 .method(method)
-                .dt_payment(dt_payment)
-                .dt_due(dt_due)
+                .dtPayment(dtPayment)
+                .dtDue(dtDue)
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
@@ -83,7 +78,7 @@ public class PayResource implements ResourceDTO<PayRequest, PayResponse>{
 
         var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}")
-                .buildAndExpand(entity.getId_history())
+                .buildAndExpand(entity.getIdHistory())
                 .toUri();
 
         return ResponseEntity.created(uri).body(response);

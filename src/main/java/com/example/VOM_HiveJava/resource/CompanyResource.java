@@ -1,13 +1,8 @@
 package com.example.VOM_HiveJava.resource;
 
-import com.example.VOM_HiveJava.dto.request.CampaignRequest;
 import com.example.VOM_HiveJava.dto.request.CompanyRequest;
-import com.example.VOM_HiveJava.dto.response.CampaignResponse;
 import com.example.VOM_HiveJava.dto.response.CompanyResponse;
-import com.example.VOM_HiveJava.entity.Campaign;
 import com.example.VOM_HiveJava.entity.Company;
-import com.example.VOM_HiveJava.repository.CampaignRepository;
-import com.example.VOM_HiveJava.repository.CompanyRepository;
 import com.example.VOM_HiveJava.service.CompanyService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -20,7 +15,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 @RestController
@@ -34,22 +28,22 @@ public class CompanyResource implements ResourceDTO<CompanyRequest, CompanyRespo
     @GetMapping
     public ResponseEntity<Collection<CompanyResponse>> findAll(
 
-            @RequestParam(name = "nm_company", required = false) String nm_company,
+            @RequestParam(name = "nmCompany", required = false) String nmCompany,
             @RequestParam(name = "cnpj", required = false) String cnpj,
             @RequestParam(name = "email", required = false) String email,
-            @RequestParam(name = "dt_register", required = false) LocalDate dt_register
+            @RequestParam(name = "dtRegister", required = false) LocalDate dtRegister
             ) {
 
         var company = Company.builder()
-                .nm_company(nm_company)
+                .nmCompany(nmCompany)
                 .cnpj(cnpj).email(email)
-                .dt_register(dt_register)
+                .dtRegister(dtRegister)
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
                 .matchingAll()
                 .withIgnoreCase()
-                .withMatcher("nm_company", match -> match.contains())
+                .withMatcher("nmCompany", match -> match.contains())
                 .withIgnoreNullValues();
 
         Example<Company> example = Example.of(company, matcher);
@@ -80,7 +74,7 @@ public class CompanyResource implements ResourceDTO<CompanyRequest, CompanyRespo
 
         var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}")
-                .buildAndExpand(entity.getId_company())
+                .buildAndExpand(entity.getIdCompany())
                 .toUri();
 
         return ResponseEntity.created(uri).body(response);

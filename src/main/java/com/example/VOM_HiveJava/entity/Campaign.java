@@ -24,10 +24,10 @@ public class Campaign {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_CAMPAIGN")
     @SequenceGenerator(name = "SQ_CAMPAIGN", sequenceName = "SQ_CAMPAIGN", allocationSize = 1)
     @Column(name = "ID_CAMPAIGN")
-    private Long id_campaign;
+    private Long idCampaign;
 
     @Column(name = "NM_CAMPAIGN")
-    private String nm_campaign;
+    private String nmCampaign;
 
     @Column(name = "TARGET_CAMPAIGN")
     private String target;
@@ -39,7 +39,7 @@ public class Campaign {
     private String status;
 
     @Column(name = "DT_REGISTER_CAMPAIGN")
-    private LocalDate dt_register;
+    private LocalDate dtRegister;
 
     //relacionamento ManyToOne
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})

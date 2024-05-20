@@ -31,25 +31,23 @@ public class ProfileResource implements ResourceDTO<ProfileRequest, ProfileRespo
     @GetMapping
     public ResponseEntity<Collection<ProfileResponse>> findAll(
 
-            @RequestParam(name = "id_user", required = false) Long id_user,
-            @RequestParam(name = "nm_user", required = false) String nm_user,
-            @RequestParam(name = "pass_user", required = false) String pass_user,
+            @RequestParam(name = "nmUser", required = false) String nmUser,
+            @RequestParam(name = "passUser", required = false) String passUser,
             @RequestParam(name = "permission", required = false) String permission,
             @RequestParam(name = "status", required = false) String status,
-            @RequestParam(name = "dt_register", required = false) LocalDate dt_register
+            @RequestParam(name = "dtRegister", required = false) LocalDate dtRegister
     ) {
         var profile = Profile.builder()
-                .id_user(id_user)
-                .nm_user(nm_user)
-                .pass_user(pass_user)
+                .nmUser(nmUser)
+                .passUser(passUser)
                 .permission(permission).status(status)
-                .dt_register(dt_register)
+                .dtRegister(dtRegister)
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
                 .matchingAll()
                 .withIgnoreCase()
-                .withMatcher("nm_user", match -> match.contains())
+                .withMatcher("nmUser", match -> match.contains())
                 .withIgnoreNullValues();
 
         Example<Profile> example = Example.of(profile, matcher);
@@ -81,7 +79,7 @@ public class ProfileResource implements ResourceDTO<ProfileRequest, ProfileRespo
 
         var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
                 .path("/{id}")
-                .buildAndExpand(entity.getId_user())
+                .buildAndExpand(entity.getIdUser())
                 .toUri();
 
         return ResponseEntity.created(uri).body(response);

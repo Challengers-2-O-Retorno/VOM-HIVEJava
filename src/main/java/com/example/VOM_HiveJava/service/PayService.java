@@ -18,25 +18,27 @@ public class PayService implements ServiceDTO<Pay, PayRequest, PayResponse> {
 
     @Override
     public Pay toEntity(PayRequest r) {
-        return Pay.builder().value(r.valor())
+        return Pay.builder()
+                .value(r.valor())
                 .nef(r.nef())
                 .method(r.method())
-                .dt_payment(r.dt_payment())
-                .dt_due(r.dt_due())
+                .dtPayment(r.dtPayment())
+                .dtDue(r.dtDue())
                 .build();
     }
 
     @Override
     public PayResponse toResponse(Pay e) {
         return PayResponse.builder()
-                .id_history(e.getId_history())
+                .idHistory(e.getIdHistory())
                 .value(e.getValue())
                 .nef(e.getNef())
                 .method(e.getMethod())
-                .dt_payment(e.getDt_payment())
-                .dt_due(e.getDt_due())
+                .dtPayment(e.getDtPayment())
+                .dtDue(e.getDtDue())
                 .build();
     }
+
 
     @Override
     public Collection<Pay> findAll(Example<Pay> example) {

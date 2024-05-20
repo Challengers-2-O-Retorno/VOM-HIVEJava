@@ -8,12 +8,12 @@ import java.time.LocalDate;
 @Builder
 public record CampaignResponse(
 
-        Long id_campaign,
-        String nm_campaign,
+        Long idCampaign,
+        String nmCampaign,
         String target,
         byte[] details,
         String status,
-        LocalDate dt_register,
+        LocalDate dtRegister,
         CompanyResponse company,
         ProductResponse product
 ) {
