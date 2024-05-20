@@ -8,12 +8,14 @@ import com.example.VOM_HiveJava.entity.Subscription;
 import com.example.VOM_HiveJava.repository.SubscriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Service
 public class SubscriptionService implements ServiceDTO<Subscription, SubscriptionRequest, SubscriptionResponse> {
 
     @Autowired

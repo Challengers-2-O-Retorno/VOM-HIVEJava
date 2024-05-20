@@ -6,9 +6,11 @@ import com.example.VOM_HiveJava.entity.Product;
 import com.example.VOM_HiveJava.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service
 public class ProductService implements ServiceDTO<Product, ProductRequest, ProductResponse> {
 
     @Autowired

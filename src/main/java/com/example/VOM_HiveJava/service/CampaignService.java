@@ -6,9 +6,11 @@ import com.example.VOM_HiveJava.entity.Campaign;
 import com.example.VOM_HiveJava.repository.CampaignRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service
 public class CampaignService implements ServiceDTO<Campaign, CampaignRequest, CampaignResponse> {
 
     @Autowired

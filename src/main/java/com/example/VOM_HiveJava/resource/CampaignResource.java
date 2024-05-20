@@ -28,7 +28,7 @@ public class CampaignResource implements ResourceDTO<CampaignRequest, CampaignRe
     private CampaignService service;
 
     @GetMapping
-    public ResponseEntity<List<CampaignResponse>> findAll(
+    public ResponseEntity<Collection<CampaignResponse>> findAll(
 
             @RequestParam(name = "nm_campaign", required = false) String nm_campaign,
             @RequestParam(name = "target", required = false) String target,
@@ -55,7 +55,6 @@ public class CampaignResource implements ResourceDTO<CampaignRequest, CampaignRe
         if (Objects.isNull(all) || all.isEmpty()) return ResponseEntity.notFound().build();
         var response = all.stream().map(service::toResponse).toList();
         return ResponseEntity.ok(response);
-
 
     }
 

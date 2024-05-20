@@ -25,7 +25,7 @@ public class ProductResource implements ResourceDTO<ProductRequest, ProductRespo
     private ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> findAll(
+    public ResponseEntity<Collection<ProductResponse>> findAll(
             @RequestParam(name = "nm_product") String nm_product,
             @RequestParam(name = "category") Category category
     ) {

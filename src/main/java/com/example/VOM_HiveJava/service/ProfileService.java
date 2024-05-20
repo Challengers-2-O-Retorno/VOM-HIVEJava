@@ -6,9 +6,11 @@ import com.example.VOM_HiveJava.entity.Profile;
 import com.example.VOM_HiveJava.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service
 public class ProfileService implements ServiceDTO<Profile, ProfileRequest, ProfileResponse> {
 
     @Autowired

@@ -8,12 +8,14 @@ import com.example.VOM_HiveJava.entity.Profile;
 import com.example.VOM_HiveJava.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Service
 public class CompanyService implements ServiceDTO<Company, CompanyRequest, CompanyResponse> {
 
     @Autowired
