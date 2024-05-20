@@ -53,4 +53,4 @@ mvn spring-boot:run
 
 **Pay_histResource com as seguintes ROTAS e VERBOS:**
 
-"localhost/pay_hist" - GET, POST
+"localhost/pay" - GET, POST
