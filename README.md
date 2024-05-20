@@ -11,6 +11,8 @@
 
 # Diagramas do projeto
 
+<img src ="https://github.com/Challengers-2-O-Retorno/VOM-HIVEJava/blob/main/documents/ClassDiagramChallenge.png">
+
 <img src="https://github.com/Challengers-2-O-Retorno/VOM-HIVEJava/blob/main/documents/Logical.png">
 
 <img src="https://github.com/Challengers-2-O-Retorno/VOM-HIVEJava/blob/main/documents/Relational.png">
