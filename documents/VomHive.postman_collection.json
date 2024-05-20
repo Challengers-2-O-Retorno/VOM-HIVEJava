@@ -120,13 +120,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:80/pay_hist",
+					"raw": "localhost:80/pay",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
-						"pay_hist"
+						"pay"
 					]
 				}
 			},
@@ -147,13 +147,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:80/pay_hist",
+					"raw": "localhost:80/pay",
 					"host": [
 						"localhost"
 					],
 					"port": "80",
 					"path": [
-						"pay_hist"
+						"pay"
 					]
 				}
 			},
