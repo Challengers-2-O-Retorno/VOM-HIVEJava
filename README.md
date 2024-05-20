@@ -51,6 +51,6 @@ mvn spring-boot:run
 
 "localhost/subscription" - GET, POST
 
-**Pay_histResource com as seguintes ROTAS e VERBOS:**
+**PayResource com as seguintes ROTAS e VERBOS:**
 
 "localhost/pay" - GET, POST
